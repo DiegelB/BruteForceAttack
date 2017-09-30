@@ -15,13 +15,13 @@ alpha = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k'
 num = ['1','2','3','4','5','6','7','8','9','0']
 
 global PASS_SIZE 
-PASS_SIZE = 5 # size of the password length
+PASS_SIZE = 4 # size of the password length
 
 # this function decides wheter it will randomize an alpha or numerical character for 
 # any given position. It is passed the lists alpha and num
 def posGenerator(alpha, num):
-    choice = random.randint(1, PASS_SIZE)
-    if(choice == 1 or choice == 2 or choice == 3):
+    choice = random.randint(1, 6)
+    if(choice == 1 or choice == 2 or choice == 3 or choice == 4 or choice == 5):
         return random.choice(alpha)
     else:
         return random.choice(num)
@@ -42,13 +42,13 @@ def bruteAttack():
         pos2 = posGenerator(alpha, num) # the password    
         pos3 = posGenerator(alpha, num)
         pos4 = posGenerator(alpha, num)
-        pos5 = posGenerator(alpha, num)
-        """pos6 = posGenerator(alpha, num)
-        pos7 = posGenerator(alpha, num)
-        pos8 = posGenerator(alpha, num)"""
+        #pos5 = posGenerator(alpha, num)
+        #pos6 = posGenerator(alpha, num)
+        #pos7 = posGenerator(alpha, num)
+        #pos8 = posGenerator(alpha, num)
 
         # this combines all the generated characters into its guessed password
-        passWord = pos1 + pos2 + pos3 + pos4 + pos5 #+ pos6 #+ pos7 + pos8 
+        passWord = pos1 + pos2 + pos3 + pos4 #+ pos5 #+ pos6 #+ pos7 #+ pos8 
         print(passWord) # main line to print each guess
 
         # this statment tests to see if the guessed password matches the password found in 
